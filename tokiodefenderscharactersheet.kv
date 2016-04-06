@@ -1,0 +1,96 @@
+<MainLayout>:
+    canvas:
+        Color:
+            rgba: 0.2, 0.2, 0.21, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        Label:
+            text: 'Ficha de personagem 3D&T Alpha'
+            font_size: '30sp'
+            size_hint_y: 0.5
+        BoxLayout:
+            padding: 5
+            spacing: 20
+            size_hint_y: 0.5
+            TextInput:
+                id: name
+                hint_text: 'Nome'
+                font_size: '25sp'
+            TextInput:
+                id: points
+                hint_text: 'Pontos'
+                font_size: '25sp'
+        BoxLayout:
+            padding: 5
+            spacing: 10
+            size_hint_y: 0.5
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Força'
+                    size_hint_y: 0.5
+                    font_size: '20sp'
+                TextInput:
+                    id: strength
+                    font_size: '25sp'
+                    text: '0'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Habilidade'
+                    size_hint_y: 0.5
+                    font_size: '20sp'
+                TextInput:
+                    id: hability
+                    font_size: '25sp'
+                    text: '0'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Resistência'
+                    size_hint_y: 0.5
+                    font_size: '20sp'
+                TextInput:
+                    id: resistance
+                    font_size: '25sp'
+                    text: '0'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Armadura'
+                    size_hint_y: 0.5
+                    font_size: '20sp'
+                TextInput:
+                    id: armor
+                    font_size: '25sp'
+                    text: '0'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Poder de Fogo'
+                    size_hint_y: 0.5
+                    font_size: '20sp'
+                TextInput:
+                    id: fire_power
+                    font_size: '25sp'
+                    text: '0'
+        BoxLayout:
+            padding: 5
+            spacing: 10
+            size_hint_y: 0.5
+            Label:
+                text: 'Pontos de Vida: ' + str(int(resistance.text or 0) * 5 or 1)
+                font_size: '25sp'
+            Label:
+                text: 'Pontos de Magia: ' + str(int(resistance.text or 0) * 5 or 1)
+                font_size: '25sp'
+        BoxLayout:
+            padding: 5
+            size_hint_y: 0.5
+            Button:
+                text: 'Salvar'
+                on_press: app.save()
